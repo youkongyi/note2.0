@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.note.user.dao.IUserLoginDAO">
+    <select id="queryUserByPassport" parameterType="String" resultType="userBO">
+      SELECT
+      ID AS ID,ROLE_ID AS ROLEID,PASSPORT AS PASSPORT,PASSWORD AS PASSWORD,
+      TELPHONE AS TELPHONE,CREATE_DATE AS CREATEDATE,CHANGE_DATE AS CHANGEDATE,
+      CHANGE_NUM AS CHANGENUM,STATE AS STATE
+      FROM USER
+      WHERE PASSPORT=#{passport };
+    </select>
+</mapper>
